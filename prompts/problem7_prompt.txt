@@ -1,0 +1,16 @@
+Please solve this problem in Python, write code, run internal test simulation, identify bugs, then provide the fixed version:
+
+Problem 7: Reverse Words in Sentence
+
+Description:
+Write a function that reverses the order of words in the input string. Words are separated by spaces.
+
+Function Signature:
+def reverse_words(sentence: str) -> str:
+Input:
+- sentence: a string
+Output:
+- A string with the words in reversed order
+
+Examples:
+reverse_words("I love Python") → "Python love I"

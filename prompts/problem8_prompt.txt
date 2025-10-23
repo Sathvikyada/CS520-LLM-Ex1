@@ -1,0 +1,17 @@
+Please solve this problem in Python, write code, run internal test simulation, identify bugs, then provide the fixed version:
+
+Problem 8: Prime Number Checker
+
+Description:
+Write a function that returns True if the integer n is a prime number, and False otherwise.
+
+Function Signature:
+def is_prime(n: int) -> bool:
+Input:
+- n: an integer greater than or equal to 0
+Output:
+- True if n is prime, False otherwise
+
+Examples:
+is_prime(2) → True
+is_prime(9) → False

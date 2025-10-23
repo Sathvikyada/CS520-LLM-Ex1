@@ -1,0 +1,21 @@
+Problem 5: Count Vowels
+
+Description:
+Write a function that returns the number of vowels in a given string.
+
+Function Signature:
+def count_vowels(s: str) -> int:
+Input:
+- s: a string
+Output:
+- The count of vowels (case-insensitive)
+
+Examples:
+count_vowels("apple") → 2
+count_vowels("sky") → 0
+
+Test Cases:
+assert count_vowels("apple") == 2
+assert count_vowels("sky") == 0
+assert count_vowels("AEIOU") == 5
+assert count_vowels("") == 0

@@ -1,0 +1,22 @@
+Problem 10: Find Second Largest
+
+Description:
+Write a function that returns the second largest number in a list of integers.
+If there are duplicates of the maximum number, ignore them when finding the second largest.
+
+Function Signature:
+def second_largest(nums: list[int]) -> int:
+Input:
+- nums: list of integers with at least two unique numbers
+Output:
+- The second largest integer in the list
+
+Examples:
+second_largest([1,2,3,4,5]) → 4
+second_largest([10,10,9]) → 9
+
+Test Cases:
+assert second_largest([1,2,3,4,5]) == 4
+assert second_largest([10,10,9]) == 9
+assert second_largest([-1,-2,-3]) == -2
+assert second_largest([5,5,5,4]) == 4

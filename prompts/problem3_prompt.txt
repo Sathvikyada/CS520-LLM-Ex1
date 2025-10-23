@@ -1,0 +1,19 @@
+Please solve this problem in Python, think step by step before writing the code:
+
+Problem 3: Fibonacci Number
+
+Description:
+Write a function that returns the nth Fibonacci number using iteration.
+Assume the sequence starts as 0, 1, 1, 2, 3, 5, 8...
+
+Function Signature:
+def fibonacci(n: int) -> int:
+Input:
+- n: a positive integer representing the position (1-indexed)
+Output:
+- The nth Fibonacci number
+
+Examples:
+fibonacci(1) → 0
+fibonacci(2) → 1
+fibonacci(7) → 8

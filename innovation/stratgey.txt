@@ -1,0 +1,43 @@
+-- Proposal --
+In this strategy, the LLM is asked to act in two roles. First as a Developer, then as a Reviewer.
+
+The Developer writes initial code based on the problem description.
+
+The Reviewer analyzes that code for logical errors, inefficiencies, or missing edge-case handling, and proposes corrections.
+
+The Developer then revises the code using the Reviewer’s feedback before presenting the final version.
+
+This mirrors the human software-engineering process of peer review and iterative refinement but is performed entirely within a single LLM conversation.
+This would enhance the model without testing tools.
+
+-- Prompt Example --
+You will act in two roles: Developer and Reviewer.
+
+Step 1 (Developer): Write the full Python solution to the problem.
+Step 2 (Reviewer): Review your own code carefully for logic errors,
+runtime issues, or missing edge cases. Write short comments on each concern.
+Step 3 (Developer): Apply the Reviewer’s feedback and produce the final, corrected code.
+
+Return only the final code at the end.
+
+-- Testing Setup --
+This Role-Based Reflection Prompting strategy was applied to two problems from earlier parts:
+
+Problem 7 – Reverse Words in Sentence
+
+Problem 9 – Merge Dictionaries
+
+Both models, GPT-5 and Claude 3, were evaluated with the same RBRP prompt.
+Their final outputs were compared against baseline pass@1 results from Part 1.
+
+-- Results --
+Problem	Model	            Baseline    pass@1	After   RBRP
+Reverse Words in Sentence	GPT-5	    1.00	1.00	No change
+Reverse Words in Sentence	Claude 3	0.33	1.00	+0.67
+Merge Dictionaries	        GPT-5	    1.00	1.00	No change
+Merge Dictionaries	        Claude 3	0.67	1.00	+0.33
+
+-- Analysis --
+The RBRP approach improved Claude 3’s reliability by forcing it to go over its own reasoning before returning final code.
+
+GPT-5 showed minimal change because its baseline accuracy was already high.

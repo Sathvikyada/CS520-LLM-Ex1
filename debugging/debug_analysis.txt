@@ -1,0 +1,120 @@
+Failure 1: Problem 7
+
+-- Prompt --
+Please solve this problem in Python, write code, run internal test simulation, identify bugs, then provide the fixed version:
+
+Problem 7: Reverse Words in Sentence
+
+Description:
+Write a function that reverses the order of words in the input string. Words are separated by spaces.
+
+Function Signature:
+def reverse_words(sentence: str) -> str:
+Input:
+- sentence: a string
+Output:
+- A string with the words in reversed order
+
+Examples:
+reverse_words("I love Python") → "Python love I"
+
+-- Claude Generated Code --
+def reverse_words(sentence: str) -> str:
+    """
+    Reverses the order of words in the input string.
+    Words are separated by spaces. Multiple spaces are treated as one separator.
+    """
+    # Split by whitespace
+    words = sentence.split()
+    
+    # Attempted in-place reversal
+    for i in range(len(words) // 2):
+        words[i], words[-i] = words[-i], words[i]
+    
+    return " ".join(words)
+
+-- Bug and Analysis --
+Identified Bug: Incorrect negative-index swap (words[-i] instead of words[-(i+1)]).
+
+Debuggging Prompt: Review your reversal logic carefully. The loop should swap elements symmetrically from start and end without out-of-range errors.
+
+Revised Version:
+def reverse_words(sentence: str) -> str:
+    words = sentence.split()
+    for i in range(len(words)//2):
+        words[i], words[-(i+1)] = words[-(i+1)], words[i]
+    return " ".join(words)
+
+-- Results After Fix --
+Problem 7   GPT-4.5	    1.00	1.00	No Change
+Problem 7   Claude 4.5	0.00	1.00	Fixed IndexError in loop
+
+-- Reason for Failure --
+Claude 3’s self-debugging mechanism mis-implemented list reversal manually, introducing an off-by-one error.
+Without runtime feedback, the model assumed its logic was correct.
+
+-- Comparison with GPT --
+GPT-5 handled prompt cleanly through high-level Pythonic constructs ([::-1]).
+Claude 3’s manual reversal demonstrates how self-debugging can introduce bugs when the model tries to simulate execution internally.
+
+Failure 2: Problem 9
+
+-- Prompt --
+Please solve this problem in Python, write code, run internal test simulation, identify bugs, then provide the fixed version:
+
+Problem 9: Merge Dictionaries
+
+Description:
+Write a function that merges two dictionaries and sums the values for any duplicate keys.
+
+Function Signature:
+def merge_dicts(d1: dict, d2: dict) -> dict:
+Input:
+
+d1, d2: dictionaries with string keys and integer values
+Output:
+
+A new dictionary containing all keys from both, summing overlapping keys' values
+
+Examples:
+merge_dicts({'a':1}, {'b':2}) → {'a':1, 'b':2}
+merge_dicts({'a':2}, {'a':3}) → {'a':5}
+
+-- Claude Generated Code --
+def merge_dicts(d1: dict, d2: dict) -> dict:
+    """
+    Merges two dictionaries and sums the values for any duplicate keys.
+    Does not modify the original dictionaries.
+    """
+    result = d1.copy()
+    for key, value in d2.items():
+        if key in result:
+            result[key] += value
+        else:
+            result[key] = value
+    return result
+
+-- Bug and Analysis --
+Identified Bug: The function unintentionally modified the original input dictionary d1 across repeated tests due to shallow copying and shared references.
+
+Debugging Prompt: Ensure that merge_dicts never modifies the input dictionaries. Use deep copies and demonstrate that d1 and d2 remain unchanged after calling the function.
+
+Revised Verison:
+import copy
+def merge_dicts(d1: dict, d2: dict) -> dict:
+    result = copy.deepcopy(d1)
+    for key, value in d2.items():
+        result[key] = result.get(key, 0) + value
+    return result
+
+-- Results After Fix --
+Problem 9   GPT-5   1.00    1.00    No Change
+Problem 9   Claude 3  0.67    1.00    Fixed mutation of input dictionary
+
+-- Reason for Failure --
+Claude 3’s implementation introduced a side-effect bug by mutating the input dictionary.
+Without explicit deep-copy handling, the model’s “self-debug” test reused the same object reference, leading to cumulative value growth across tests.
+
+-- Comparison with GPT --
+GPT-5 used a clean .get() pattern that preserved immutability from the start.
+Claude 3’s approach worked logically but failed to account for Python’s reference semantics until the prompt explicitly requested immutability verification.

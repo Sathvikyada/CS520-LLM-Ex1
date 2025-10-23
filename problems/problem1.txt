@@ -1,0 +1,22 @@
+Problem 1: Sum of Digits
+
+Description:
+Write a function that returns the sum of all digits in the integer n.
+
+Function Signature:
+def sum_of_digits(n: int) -> int:
+Input:
+- n: an integer (can be positive, zero, or negative)
+Output:
+- The sum of digits of the absolute value of n
+
+Examples:
+sum_of_digits(123) → 6
+sum_of_digits(0) → 0
+sum_of_digits(-456) → 15
+
+Test Cases:
+assert sum_of_digits(123) == 6
+assert sum_of_digits(0) == 0
+assert sum_of_digits(99999) == 45
+assert sum_of_digits(-987) == 24

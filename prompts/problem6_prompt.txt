@@ -1,0 +1,16 @@
+Please solve this problem in Python, write code, run internal test simulation, identify bugs, then provide the fixed version:
+
+Problem 6: Find Max in List
+
+Description:
+Write a function that returns the maximum value in a list without using the built-in `max()` function.
+
+Function Signature:
+def find_max(nums: list[int]) -> int:
+Input:
+- nums: a list of integers (non-empty)
+Output:
+- The largest integer in the list
+
+Examples:
+find_max([1, 2, 3, 4, 5]) → 5

@@ -1,0 +1,18 @@
+Please solve this problem in Python, think step by step before writing the code:
+
+Problem 2: Palindrome Checker
+
+Description:
+Write a function that returns True if the given string is a palindrome, ignoring spaces, punctuation, and case.
+
+Function Signature:
+def is_palindrome(s: str) -> bool:
+Input:
+- s: a string
+Output:
+- True if s is a palindrome, False otherwise
+
+Examples:
+is_palindrome("racecar") → True
+is_palindrome("hello") → False
+is_palindrome("A man a plan a canal Panama") → True

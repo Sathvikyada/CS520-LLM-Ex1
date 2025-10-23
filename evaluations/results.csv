@@ -1,0 +1,12 @@
+Problem,Stratgey,GPT5_Pass@1,Claude3_Pass@1,Notes
+sum_of_digits,CoT,1.0,1.0,Both perfect
+palindrome_checker,CoT,1.0,0.67,Claude sometimes ignored spaces/punctuation
+fibonacci_number,CoT,1.0,1.0,Both correct
+factorial_recursive,CoT,1.0,0.67,Claude used iterative version once
+count_vowels,CoT,1.0,1.0,Both handled uppercase correctly
+find_max_in_list,Self-Debugging,1.0,1.0,Both correct
+reverse_words_in_sentence,Self-Debugging, 0.67,1,Claude reversed characters not words
+is_prime,Self-Debugging,0.67,1.0,GPT missed edge cases 0 and 1
+merge_dicts,Self-Debugging,1.0,0.67,Claude overwrote duplicate keys
+second_largest,Self-Debugging,0.67,0.33,Both mis-handled duplicates
+Average,Self-Debugging,0.9,0.77,GPT-5 slightly stronger overall

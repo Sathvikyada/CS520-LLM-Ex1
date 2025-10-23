@@ -1,0 +1,21 @@
+Problem 9: Merge Dictionaries
+
+Description:
+Write a function that merges two dictionaries and sums the values for any duplicate keys.
+
+Function Signature:
+def merge_dicts(d1: dict, d2: dict) -> dict:
+Input:
+- d1, d2: dictionaries with string keys and integer values
+Output:
+- A new dictionary containing all keys from both, summing overlapping keys' values
+
+Examples:
+merge_dicts({'a':1}, {'b':2}) → {'a':1, 'b':2}
+merge_dicts({'a':2}, {'a':3}) → {'a':5}
+
+Test Cases:
+assert merge_dicts({'a':1}, {'b':2}) == {'a':1,'b':2}
+assert merge_dicts({'a':2}, {'a':3}) == {'a':5}
+assert merge_dicts({}, {'z':9}) == {'z':9}
+assert merge_dicts({'x':5,'y':1}, {'y':4,'z':3}) == {'x':5,'y':5,'z':3}

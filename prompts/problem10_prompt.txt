@@ -1,0 +1,18 @@
+Please solve this problem in Python, write code, run internal test simulation, identify bugs, then provide the fixed version:
+
+Problem 10: Find Second Largest
+
+Description:
+Write a function that returns the second largest number in a list of integers.
+If there are duplicates of the maximum number, ignore them when finding the second largest.
+
+Function Signature:
+def second_largest(nums: list[int]) -> int:
+Input:
+- nums: list of integers with at least two unique numbers
+Output:
+- The second largest integer in the list
+
+Examples:
+second_largest([1,2,3,4,5]) → 4
+second_largest([10,10,9]) → 9

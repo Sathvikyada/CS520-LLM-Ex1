@@ -1,0 +1,17 @@
+Please solve this problem in Python, think step by step before writing the code:
+
+Problem 4: Factorial (Recursive)
+
+Description:
+Write a recursive function that returns the factorial of n.
+
+Function Signature:
+def factorial(n: int) -> int:
+Input:
+- n: a non-negative integer
+Output:
+- The factorial of n
+
+Examples:
+factorial(0) → 1
+factorial(5) → 120
