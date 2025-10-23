@@ -33,7 +33,7 @@ Their final outputs were compared against baseline pass@1 results from Part 1.
 -- Results --
 Problem	Model	            Baseline    pass@1	After   RBRP
 Reverse Words in Sentence	GPT-5	    1.00	1.00	No change
-Reverse Words in Sentence	Claude 3	0.33	1.00	+0.67
+Reverse Words in Sentence	Claude 3	0.67	1.00	+0.33
 Merge Dictionaries	        GPT-5	    1.00	1.00	No change
 Merge Dictionaries	        Claude 3	0.67	1.00	+0.33
 
