@@ -1,0 +1,9 @@
+Problem 6 – find_max
+- Seeded bug: Reverted to the earlier implementation that initialized `max_val = 0`, which incorrectly handles lists of all negative numbers. This is a realistic regression when refactoring unsigned logic into signed comparisons.
+- Result: Improved suite failed as expected. Failing tests: `test_find_max[nums1--1]`, `test_find_max_all_negative_strictly_decreasing`.
+- Conclusion: Additional branch coverage on the empty-list and strictly-decreasing negative cases ensured that the regression is caught immediately.
+
+Problem 8 – is_prime
+- Seeded bug: Changed the even-number guard to `return True`, simulating a mistaken optimization that treats all even numbers as prime.
+- Result: Enhanced suite failed with `test_is_prime_even_composite`, demonstrating detection of the faulty early-return path.
+- Conclusion: LLM-generated tests that explicitly target even composites bridge the original coverage gap and translate directly into fault detection.

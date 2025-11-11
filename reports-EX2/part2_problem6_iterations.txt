@@ -1,0 +1,23 @@
+Iteration 1 (baseline)
+Prompt: Baseline benchmark tests
+Coverage: line 87%, branch 83%
+Notes: Baseline suite missed the empty-list guard and additional negative-number patterns.
+
+Iteration 2
+Prompt: "Generate pytest unit tests for find_max that assert the function raises a ValueError when the input list is empty and also covers strictly-decreasing lists of negative numbers."
+Created tests: `test_find_max_raises_for_empty_list`, `test_find_max_all_negative_strictly_decreasing`.
+Duplicate handling: Prompt produced a duplicate positive-number case which was already there so removed it
+Coverage after iteration: line 100%, branch 100%.
+
+Iteration 3
+Prompt: "Suggest additional pytest cases for find_max that stress very large magnitudes and repeated maximum values while keeping each case distinct."
+Created tests: `test_find_max_large_magnitude_mix`, `test_find_max_duplicate_max_values`.
+Duplicate handling: Removed a suggested ascending-sequence example as it matched an existing test.
+Coverage after iteration: line 100%, branch 100% (no change; coverage plateau confirmed).
+
+Iteration 4
+Prompt: "Provide one more distinct pytest example for find_max that mixes positive and negative inputs to confirm comparison logic."
+Created test: `test_find_max_negative_and_positive_mix`.
+Duplicate handling: Removed an LLM-suggested empty-list duplicate already covered in Iteration 1.
+Coverage after iteration: line 100%, branch 100% (difference from Iteration 1 ≤ 0%, convergence achieved).
+

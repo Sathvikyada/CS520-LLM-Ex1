@@ -1,1 +1,1 @@
-# CS520-LLM-Ex1
+# CS520-LLM-Ex1-Ex2

@@ -1,0 +1,23 @@
+Iteration 1 (baseline)
+Prompt: Baseline benchmark tests
+Coverage: line 91%, branch 90%
+Notes: Suite lacked explicit coverage for even composites and negative inputs.
+
+Iteration 2
+Prompt: "Write pytest tests for is_prime that exercise the early returns for even composite numbers and negative inputs."
+Created tests: `test_is_prime_even_composite`, `test_is_prime_negative_number`.
+Duplicate handling: Removed a duplicate for n=1 as it was already included in the benchmark suite.
+Coverage after iteration: line 100%, branch 100%
+
+Iteration 3
+Prompt: "Propose additional pytest assertions for is_prime that stress-check large primes and perfect-square composites."
+Created tests: `test_is_prime_large_prime`, `test_is_prime_square_of_prime`.
+Duplicate handling: Removed a duplicate for n=13 which was already covered in the benchmark suite.
+Coverage after iteration: line 100%, branch 100%
+
+Iteration 4
+Prompt: "Give one more pytest example for is_prime targeting a tricky composite to validate deeper divisor checks."
+Created test: `test_is_prime_carmichael_number`.
+Duplicate handling: Removed a suggested test for n=0, which duplicates an existing baseline case.
+Coverage after iteration: line 100%, branch 100% (difference from Iteration 1 ≤ 0%, convergence achieved).
+

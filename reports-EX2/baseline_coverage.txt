@@ -1,0 +1,27 @@
+Baseline Coverage Summary
+
+    Problem       Tests Passed   Line %   Branch %                  Notes
+1 – sum_of_digits       4/4       100      NONE      Straight-line logic; full statement coverage.
+2 – is_palindrome       5/5       100      NONE      Pure expression build; no conditional branches exercised.
+3 – fibonacci           4/4       100      100       Iterative loop hit for all test sizes.
+4 – factorial           5/5       100      100       Happy-path + negative-input error path covered.
+5 – count_vowels        4/4       100      NONE      Only linear comprehension; all statements executed.
+6 – find_max            2/3       100      100       Benchmark suite exposed missing support for all-negative lists (assertion failure).
+7 – reverse_words       4/4       100      NONE      No conditional logic; coverage trivial.
+8 – is_prime            5/5       91       90        Even-number fast-exit branch never taken; only odd cases in benchmark tests.
+9 – merge_dicts         4/4       100      100       All merge paths exercised by provided assertions.
+10 – second_largest     5/5       100      100       Duplicate-handling path covered via provided failure case.
+
+Post-Additional Test Coverage Summary
+
+   Problem            Tests Passed  Line %   Branch %   Notes
+1 – sum_of_digits          4/4      100       N/A      Straight-line logic; full statement coverage.
+2 – is_palindrome          5/5      100       N/A      Pure expression build; no conditional branches exercised.
+3 – fibonacci              4/4      100       100      Iterative loop hit for all test sizes.
+4 – factorial              5/5      100       100      Happy-path + negative-input error path covered.
+5 – count_vowels           4/4      100       N/A      Only linear comprehension; all statements executed.
+6 – find_max               8/8      100       100      Expanded LLM tests now cover empty input and edge mixes.
+7 – reverse_words          4/4      100       N/A      No conditional logic; coverage trivial.
+8 – is_prime              10/10     100       100      LLM-assisted tests now exercise even composites and deep divisors.
+9 – merge_dicts            4/4      100       100      All merge paths exercised by provided assertions.
+10 – second_largest        5/5      100       100      Duplicate-handling path covered via provided failure case.
